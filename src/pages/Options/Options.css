@@ -1,0 +1,181 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: #010081;
+  --almond: hsla(27, 92%, 90%, 1);
+  --baby-pink: #ff0081;
+  --green: #008080;
+  --grey: #c3c3c3;
+  --baby-blue-eyes: hsla(215, 77%, 80%, 1);
+  --non-photo-blue: hsla(195, 82%, 76%, 1);
+  --electric-blue: #818181;
+  --magic-mint: hsla(167, 82%, 78%, 1);
+  --celadon: hsla(126, 89%, 85%, 1);
+
+  --color-background: var(--green);
+  --color-text: #303030;
+  --color-primary: var(--magic-mint);
+  --box-height: 300px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  background-color: var(--color-background);
+  background: #008080;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  gap: 3ch;
+  max-width: 960px;
+  padding: 0 4ch;
+}
+
+.select-container {
+  width: auto;
+  margin-top: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.camera-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--box-height);
+  min-height: var(--box-height);
+  background-color: var(--grey);
+  outline: 1px solid var(--color-text);
+}
+
+.camera-container video {
+  position: absolute;
+  width: var(--box-height);
+  height: var(--box-height);
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  /* transform: scale(2.5); */
+  /* border-radius: 50%; */
+  padding: 8px;
+  background-color: #818181;
+  z-index: 1;
+}
+
+.camera-container canvas {
+  position: absolute;
+  width: var(--box-height);
+  height: var(--box-height);
+  /* transform: scale(2.5); */
+  object-fit: cover;
+  padding: 8px;
+  z-index: 1;
+}
+
+.card {
+  padding: 16px;
+  grid-template-rows: 1fr auto;
+  background-color: #fff;
+  outline: 1px solid var(--color-text);
+  min-height: var(--box-height);
+}
+
+button {
+  background-color: var(--cream);
+  color: white;
+}
+
+.btn-stop {
+  background-color: var(--baby-pink);
+  color: rgb(0, 0, 0);
+}
+
+.btn-start {
+  background-color: var(--electric-blue);
+  color: rgb(255, 255, 255);
+}
+
+.button-container div {
+  /* margin-top: 1rem; */
+  /* margin-right: 1rem; */
+}
+
+p {
+  margin-top: 1rem;
+}
+
+button {
+  border: 1px solid var(--color-text);
+  padding: 6px 11px;
+  transform: translate(-1px, -1px);
+  transition: all 0.05s ease-in;
+}
+
+button:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+button:active {
+  transform: translate(0, 0);
+  box-shadow: 0.2ch 0.2ch rgba(0, 0, 0, 0.8);
+}
+
+/* overlay styles */
+.btn-info {
+  background: rgba(142, 236, 245, 1);
+}
+.overlay {
+  position: absolute;
+  background: rgba(241, 192, 232, 1);
+  background: linear-gradient( 
+  80deg, rgba(241, 192, 232, 1) 0%, rgba(142, 236, 245, 1) 100% );
+  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.overlay-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0.5rem;
+  width: 38px;
+  border: 2px solid #e7c5e9;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.overlay-close-btn:hover {
+  color:rgba(0, 0, 0, 1)
+}
