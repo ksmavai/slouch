@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" width="200" alt="slouch logo">
+</p>
+
 # slouch
 
 a chrome extension that monitors your posture in real-time using computer vision, providing visual feedback when you slouch. it uses **tensorflow.js** and **movenet** pose detection to track your alignment and blurs web pages when poor posture is detected.
